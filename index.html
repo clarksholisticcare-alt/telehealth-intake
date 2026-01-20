@@ -3,114 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telehealth Intake - Clark's Holistic Care</title>
-    <style>
-        /* Global Styles */
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f4f8;
-            color: #333;
-        }
-
-        /* Container */
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        /* Logo */
-        .logo {
-            max-width: 200px;
-            margin: 0 auto 30px;
-        }
-
-        /* Headings */
-        h1 {
-            color: #2c3e50;
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        p {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 30px;
-        }
-
-        /* Optional back button */
-        .back-button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 25px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .back-button:hover {
-            background-color: #45a049;
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.6rem;
-            }
-            p {
-                font-size: 1rem;
-            }
-            .container {
-                padding: 30px 15px;
-            }
-        }
-    </style>
-
-    <!-- Qualiphy stylesheet -->
+    <title>Urgent Care - Clark’s Holistic Care</title>
+    <!-- Logo & Branding -->
     <link rel="stylesheet" href="https://firebasestorage.googleapis.com/v0/b/qualiphy-web-d918b.appspot.com/o/style-v4.css?alt=media&token=34735782-16e8-4a2f-9eaa-426d65af48b2" />
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f9f9f9; margin: 0; padding: 0; }
+        header { background-color: #0A005B; padding: 20px; text-align: center; color: white; }
+        header img { height: 60px; }
+        h1 { text-align: center; margin-top: 20px; color: #0A005B; }
+        .accordion { width: 90%; max-width: 800px; margin: 20px auto; }
+        .accordion button { 
+            background-color: #cfc9ff; color: #0A005B; cursor: pointer; padding: 15px; 
+            width: 100%; border: none; text-align: left; outline: none; font-size: 16px; border-radius: 5px; margin-bottom: 5px;
+        }
+        .accordion button:hover { background-color: #8058fa; color: white; }
+        .panel { padding: 0 15px; display: none; background-color: white; overflow: hidden; border-radius: 5px; margin-bottom: 10px; }
+        .back-button { display: block; width: 200px; margin: 30px auto; padding: 12px; background-color: #8058fa; color: white; text-align: center; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .back-button:hover { background-color: #0A005B; }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Logo -->
-        <img src="https://yourdomain.com/logo.png" alt="Clark's Holistic Care Logo" class="logo">
 
-        <!-- Heading -->
-        <h1>Welcome to Your Telehealth Intake</h1>
-        <p>Thank you for your payment! Please click below to start your telehealth exam invite.</p>
+<header>
+    <img src="https://clarksholisticcare.square.site/assets/logo.png" alt="Clark’s Holistic Care Logo">
+</header>
 
-        <!-- Qualiphy / Quiget Widget -->
-        <div>
-            <div id="main-qualiphy-widget">
-                <div
-                    id="loadFormButton"
-                    style="width: 150px;height: 40px;cursor: pointer;background-color: #cfc9ff;color: #0a005b;border: none;border-radius: 5px;font-weight: 600;display: flex;justify-content: center;align-items: center;"
-                    onmouseover="this.style.backgroundColor='#8058fa'; this.style.color='white'"
-                    onmouseout="this.style.backgroundColor='#CFC9FF'; this.style.color='#0A005B'"
-                    onclick="showDisclosureModal()"
-                >
-                    Exam Invite
-                </div>
-            </div>
-            <p style="display: none" id="not-available">Not available!</p>
+<h1>Urgent Care Services</h1>
+<p style="text-align:center;">Click a service below to fill out your exam form securely.</p>
+
+<div class="accordion">
+    <button>Dandruff & Scalp Care</button>
+    <div class="panel">
+        <!-- Quiget button -->
+        <div id="main-qualiphy-widget-1576">
+            <div id="loadFormButton" onclick="showDisclosureModal('1576')">Exam Invite</div>
         </div>
-
-        <!-- Moment.js (required by widget) -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-
-        <!-- Qualiphy script -->
-        <script id="qualiphy-script" type="text/javascript" src="https://www.app.qualiphy.me/scripts/quidget_disclosure.js" 
-            data-formsrc='https://www.app.qualiphy.me/qualiphy-widget?clinic=Clark’s Holistic Care&clinicId=4808&first_name=&last_name=&email=&phone_number=&gender=&exams=2769,2745,2310,2490,1702,1618,2488,2316,2315,2129,1620,2121,2314,2130,1623,2248,2681,1690,2122,2762,3388,2247,1576,1486,1634,1507,1539,1616,1808,1619,1574,1621,1631,1514,1575,1528,1849,1640,3390&tele_state_required=true&token=956c9236da8a2524a476a90c3cf8151ad22a371f' 
-            data-timezone='-5' 
-            data-examhours='[{"SUN":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"MON":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"TUE":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"WED":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"THU":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"FRI":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"SAT":{"FROM":"00:00","TO":"23:59","isDaySelected":true}}]'>
-        </script>
-
-        <!-- Optional Back to Booking Button -->
-        <a href="https://squareup.com/store/clarksholisticcare" class="back-button">Back to Booking</a>
     </div>
-</body>
-</html>
 
+    <button>Acne Treatment & Skin Support</button>
+    <div class="pan
+
+                
